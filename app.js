@@ -12,6 +12,11 @@ function exibirTextoNaTela(tag, texto) {
 function exibirMensagemInicial() {
     exibirTextoNaTela('h1', 'Jogo do número secreto');
     exibirTextoNaTela('p', 'Escolha um número entre 1 e 10');
+    atualizarContador();
+}
+
+function atualizarContador() {
+    document.getElementById('contador').textContent = tentativas;
 }
 
 exibirMensagemInicial();
@@ -32,6 +37,7 @@ function verificarChute() {
             exibirTextoNaTela('p', 'O número secreto é maior');
         }
         tentativas++;
+        atualizarContador();
         limparCampo();
     }
 }
